@@ -21,6 +21,19 @@
             },
             "native": {}
         },
+        "MODE": {
+            "type": "state",
+            "common": {
+                "name": "Operation mode",
+                "role": "state",
+                "type": "number",
+                "read": true,
+                "write": true,
+                "def" : 0,
+                "states": {"0": "Automatic", "1": "Manual", "255": "Off"}
+            },
+            "native": {}
+        },
         "NR": {
             "type": "state",
             "common": {
@@ -59,22 +72,6 @@
             },
             "datafield": [
                 {
-                    "data": "Night reduction",
-                    "shortcut": "NR",
-                    "bitoffs": "0",
-                    "bitsize": "8",
-                    "value_out": {
-                        "if": [
-                            {"==":[0, {"var": "value"}]}, 0,
-                            {"==":[1, {"var": "value"}]}, 6,
-                            {"==":[2, {"var": "value"}]}, 12,
-                            {"==":[3, {"var": "value"}]}, 19,
-                            {"==":[4, {"var": "value"}]}, 25,
-                            {"==":[5, {"var": "value"}]}, 31
-                        ]
-                    }
-                },
-                {
                     "data": "Set point 12...28°C",
                     "shortcut": "SP",
                     "bitoffs": "8",
@@ -83,14 +80,7 @@
                 },
                 {
                     "data": "fixed parameter",
-                    "description": "dummy",
-                    "bitoffs": "16",
-                    "bitsize": "8",
-                    "value": 0
-                },
-                {
-                    "data": "fixed parameter",
-                    "description": "Represents learnbit",
+                    "description": "Must be set",
                     "bitoffs": "28",
                     "bitsize": "1",
                     "value": 1
@@ -116,28 +106,28 @@
             "datafield": [
                 {
                     "data": "fixed parameter",
-                    "description": "teachin byte 1",
+                    "description": "Hex = 40",
                     "bitoffs": "0",
                     "bitsize": "8",
                     "value": 64
                 },
                 {
                     "data": "fixed parameter",
-                    "description": "teachin byte 2",
+                    "description": "Hex = 30",
                     "bitoffs": "8",
                     "bitsize": "8",
                     "value": 48
                 },
                 {
                     "data": "fixed parameter",
-                    "description": "teachin byte 3",
+                    "description": "Hex = 0D",
                     "bitoffs": "16",
                     "bitsize": "8",
                     "value": 13
                 },
                 {
                     "data": "fixed parameter",
-                    "description": "teachin byte 4",
+                    "description": "Hex = 85",
                     "bitoffs": "24",
                     "bitsize": "8",
                     "value": 133
