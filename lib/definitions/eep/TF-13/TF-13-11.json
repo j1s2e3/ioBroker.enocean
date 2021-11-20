@@ -2,9 +2,9 @@
   "eep": "TF-13-11",
   "rorg_number": "0xA5",
   "telegram": "4BS",
-  "func_number": "0x3F",
-  "type_number": "0x7F",
-  "type_title": "Switch actuator",
+  "func_number": "0x00",
+  "type_number": "0x00",
+  "type_title": "FL62, FL62NP, FR62, FR62NP",
   "bidirectional": false,
   "objects": {
     "CMD": {
@@ -31,6 +31,18 @@
         "def": false
       },
       "native": {}
+    },
+    "LM": {
+      "type": "state",
+      "common": {
+        "name": "Learning mode",
+        "role": "state",
+        "type": "boolean",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
     }
   },
   "case": [
@@ -39,8 +51,6 @@
       "condition": {
         "command": [
           {
-            "bitoffs": "16",
-            "bitsize": "8",
             "value": 0
           }
         ]
@@ -69,22 +79,28 @@
         },
         {
           "data": "fixed parameter",
-          "description": "Learn bit",
+          "description": "Data telegramm",
           "bitoffs": "28",
           "bitsize": "1",
           "value": 1
+        },
+        {
+          "data": "Learning mode",
+          "shortcut": "LM",
+          "bitoffs": "26",
+          "bitsize": "1",
+          "value_out": {"if":[{"var":"value"},1,0]}
         },
         {
           "data": "State blocked",
           "shortcut": "SB",
           "bitoffs": "29",
           "bitsize": "1",
-          "value": {"==": [{"var": "value"}, 1]},
-          "value_out": {"if": [{"var": "value"}, 1, 0]}
+          "value_out": {"if":[{"var":"value"},1,0]}
         },
         {
           "data": "fixed parameter",
-          "description": "OFF",
+          "description": "Off",
           "bitoffs": "31",
           "bitsize": "1",
           "value": 0
@@ -96,8 +112,6 @@
       "condition": {
         "command": [
           {
-            "bitoffs": "16",
-            "bitsize": "8",
             "value": 1
           }
         ]
@@ -126,22 +140,28 @@
         },
         {
           "data": "fixed parameter",
-          "description": "Learn bit",
+          "description": "Data telegramm",
           "bitoffs": "28",
           "bitsize": "1",
           "value": 1
+        },
+        {
+          "data": "Learning mode",
+          "shortcut": "LM",
+          "bitoffs": "26",
+          "bitsize": "1",
+          "value_out": {"if":[{"var":"value"},1,0]}
         },
         {
           "data": "State blocked",
           "shortcut": "SB",
           "bitoffs": "29",
           "bitsize": "1",
-          "value": {"==": [{"var": "value"}, 1]},
-          "value_out": {"if": [{"var": "value"}, 1, 0]}
+          "value_out": {"if":[{"var":"value"},1,0]}
         },
         {
           "data": "fixed parameter",
-          "description": "ON",
+          "description": "On",
           "bitoffs": "31",
           "bitsize": "1",
           "value": 1
@@ -153,8 +173,6 @@
       "condition": {
         "command": [
           {
-            "bitoffs": "16",
-            "bitsize": "8",
             "value": 2
           }
         ]
@@ -202,33 +220,51 @@
       "datafield": [
         {
           "data": "fixed parameter",
-          "description": "dummy",
+          "description": "Hex = 00",
           "bitoffs": "0",
           "bitsize": "8",
           "value": 0
         },
         {
           "data": "fixed parameter",
-          "description": "dummy",
+          "description": "Hex = 00",
           "bitoffs": "8",
           "bitsize": "8",
           "value": 0
         },
         {
           "data": "fixed parameter",
-          "description": "dummy",
+          "description": "Hex = 00",
           "bitoffs": "16",
           "bitsize": "8",
           "value": 0
         },
         {
           "data": "fixed parameter",
-          "description": "dummy",
+          "description": "Hex = 08",
           "bitoffs": "24",
           "bitsize": "8",
           "value": 8
         }
-
+      ]
+    },
+    {
+      "send": false,
+       "datafield": [
+         {
+           "data": "Learning mode",
+           "shortcut": "LM",
+           "bitoffs": "26",
+           "bitsize": "1",
+           "value": {"==": [{"var": "value"},1]}
+         },
+         {
+           "data": "State blocked",
+           "shortcut": "SB",
+           "bitoffs": "29",
+           "bitsize": "1",
+           "value": {"==": [{"var": "value"},1]}
+         }
       ]
     }
   ]
