@@ -15,7 +15,7 @@
                 "type": "number",
                 "read": false,
                 "write": true,
-                "states": {"0": "Red","1": "Green","2": "Blue","3": "White","4": "Dimup","5": "Dim down","6": "Dim stop","7": "Teach-in","8": "Request confirmation telegram"},
+                "states": {"0": "Red","1": "Green","2": "Blue","3": "White","4": "Dim up","5": "Dim down","6": "Dim stop","7": "Teach-in","8": "Request confirmation telegram"},
                 "def": 0
             },
             "native": {}
@@ -84,6 +84,7 @@
                 "type": "number",
                 "read": true,
                 "write": true,
+                "states": {"0": "Use hardware setting", "1": "Fast", "128": "Medium", "255": "Fast"},
                 "def": 0
             },
             "native": {}
@@ -486,28 +487,28 @@
             "datafield": [
                 {
                     "data": "fixed parameter",
-                    "description": "Teachin DB3",
+                    "description": "Hex = FF",
                     "bitoffs": "0",
                     "bitsize": "8",
                     "value": 255
                 },
                 {
                     "data": "fixed parameter",
-                    "description": "Teachin DB2",
+                    "description": "Hex = F8",
                     "bitoffs": "8",
                     "bitsize": "8",
                     "value": 248
                 },
                 {
                     "data": "fixed parameter",
-                    "description": "Teachin DB1",
+                    "description": "Hex = 0D",
                     "bitoffs": "16",
                     "bitsize": "8",
                     "value": 13
                 },
                 {
                     "data": "fixed parameter",
-                    "description": "Teachin DB0",
+                    "description": "Hex = 87",
                     "bitoffs": "24",
                     "bitsize": "8",
                     "value": 135
@@ -526,28 +527,28 @@
             "datafield": [
                 {
                     "data": "fixed parameter",
-                    "description": "dummy",
+                    "description": "Hex = 0F",
                     "bitoffs": "0",
                     "bitsize": "8",
                     "value": 15
                 },
                 {
                     "data": "fixed parameter",
-                    "description": "dummy",
+                    "description": "Hex = 02",
                     "bitoffs": "8",
                     "bitsize": "8",
                     "value": 2
                 },
                 {
                     "data": "fixed parameter",
-                    "description": "dummy",
+                    "description": "Hex = 00",
                     "bitoffs": "16",
                     "bitsize": "8",
                     "value": 0
                 },
                 {
                     "data": "fixed parameter",
-                    "description": "dummy",
+                    "description": "Hex = 00",
                     "bitoffs": "24",
                     "bitsize": "8",
                     "value": 0
