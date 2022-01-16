@@ -27,6 +27,17 @@
                 "role": "state",
                 "type": "number",
                 "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        "ROUT": {
+            "type": "state",
+            "common": {
+                "name": "Red out",
+                "role": "state",
+                "type": "number",
+                "read": true,
                 "write": true,
                 "min": 0,
                 "max": 1023,
@@ -38,6 +49,17 @@
             "type": "state",
             "common": {
                 "name": "Green",
+                "role": "state",
+                "type": "number",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        "GOUT": {
+            "type": "state",
+            "common": {
+                "name": "Green out",
                 "role": "state",
                 "type": "number",
                 "read": true,
@@ -55,6 +77,17 @@
                 "role": "state",
                 "type": "number",
                 "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        "BOUT": {
+            "type": "state",
+            "common": {
+                "name": "Blue out",
+                "role": "state",
+                "type": "number",
+                "read": true,
                 "write": true,
                 "min": 0,
                 "max": 1023,
@@ -66,6 +99,17 @@
             "type": "state",
             "common": {
                 "name": "White",
+                "role": "state",
+                "type": "number",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        "WOUT": {
+            "type": "state",
+            "common": {
+                "name": "White out",
                 "role": "state",
                 "type": "number",
                 "read": true,
@@ -84,7 +128,7 @@
                 "type": "number",
                 "read": true,
                 "write": true,
-                "states": {"0": "Use hardware setting", "1": "Fast", "128": "Medium", "255": "Fast"},
+                "states": {"0": "Use hardware setting", "1": "Fast", "128": "Medium", "255": "Slow"},
                 "def": 0
             },
             "native": {}
@@ -150,8 +194,8 @@
             },
             "datafield": [
                 {
-                    "data": "Red",
-                    "shortcut": "R",
+                    "data": "Red out",
+                    "shortcut": "ROUT",
                     "bitoffs": "0",
                     "bitsize": "16",
                     "value_out": {"var": "value"}
@@ -183,8 +227,8 @@
             },
             "datafield": [
                 {
-                    "data": "Green",
-                    "shortcut": "G",
+                    "data": "Green out",
+                    "shortcut": "GOUT",
                     "bitoffs": "0",
                     "bitsize": "16",
                     "value_out": {"var": "value"}
@@ -216,8 +260,8 @@
             },
             "datafield": [
                 {
-                    "data": "Blue",
-                    "shortcut": "B",
+                    "data": "Blue out",
+                    "shortcut": "BOUT",
                     "bitoffs": "0",
                     "bitsize": "16",
                     "value_out": {"var": "value"}
@@ -249,8 +293,8 @@
             },
             "datafield": [
                 {
-                    "data": "White",
-                    "shortcut": "W",
+                    "data": "White out",
+                    "shortcut": "WOUT",
                     "bitoffs": "0",
                     "bitsize": "16",
                     "value_out": {"var": "value"}
