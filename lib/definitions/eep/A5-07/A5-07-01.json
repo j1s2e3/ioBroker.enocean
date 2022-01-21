@@ -11,6 +11,11 @@
   },
   "case": [{
     "send": false,
+    "condition": [{
+        "bitoffs": "8",
+        "bitsize": "8",
+        "value": 0
+    }],
     "datafield": [
       {
         "data": "PIR Status",
