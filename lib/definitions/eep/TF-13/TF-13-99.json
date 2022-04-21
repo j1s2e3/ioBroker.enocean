@@ -1,0 +1,412 @@
+{
+    "eep": "TF-13-99",
+    "rorg_number": "0xA5",
+    "telegram": "4BS",
+    "func_number": "0x00",
+    "type_number": "0x00",
+    "type_title": "FD62NP, FD62NPN",
+    "bidirectional": true,
+    "objects": {
+        "preDefined": ["ON"],
+        "CMD": {
+            "type": "state",
+            "common": {
+                "name": "Command",
+                "role": "state",
+                "type": "number",
+                "read": true,
+                "write": true,
+                "states": {"0": "Off", "1": "On", "2": "Set level", "3": "Teach-in", "4": "Request confirmation telegram", "5": "Activate Learnmode"}
+            },
+            "native": {}
+        },
+        "LVL": {
+            "type": "state",
+            "common": {
+                "name": "Level",
+                "role": "level.dimmer",
+                "type": "number",
+                "read": true,
+                "write": true,
+                "unit": "%",
+                "def": 100
+            },
+            "native": {}
+        },
+        "DS": {
+            "type": "state",
+            "common": {
+                "name": "Dimming speed",
+                "role": "level",
+                "type": "number",
+                "read": true,
+                "write": true,
+                "states": {"0": "Use hardware setting", "1": "Fast", "128": "Medium", "255": "Slow"},
+                "def": 0
+            },
+            "native": {}
+        },
+        "BL": {
+            "type": "state",
+            "common": {
+                "name": "Block level",
+                "role": "state",
+                "type": "boolean",
+                "read": true,
+                "write": true,
+                "def": false
+            },
+            "native": {}
+        },
+        "LM": {
+            "type": "state",
+            "common": {
+                "name": "Learning mode",
+                "role": "state",
+                "type": "boolean",
+                "read": true,
+                "write": true,
+                "def": false
+            },
+            "native": {}
+        }
+    },
+    "case": [
+        {
+            "send": true,
+            "condition": {
+                "command": [
+                    {
+                        "value": 0
+                    }
+                ]
+            },
+            "datafield": [
+                {
+                    "data": "fixed parameter",
+                    "description": "dummy",
+                    "bitoffs": "0",
+                    "bitsize": "8",
+                    "value": 2
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Dimming level",
+                    "bitoffs": "8",
+                    "bitsize": "8",
+                    "value": 0
+                },
+                {
+                    "data": "Dimming speed",
+                    "shortcut": "DS",
+                    "bitoffs": "16",
+                    "bitsize": "8",
+                    "value": {"var": "value"}
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Data telegramm",
+                    "bitoffs": "28",
+                    "bitsize": "1",
+                    "value": 1
+                },
+                {
+                    "data": "Learning mode",
+                    "shortcut": "LM",
+                    "bitoffs": "26",
+                    "bitsize": "1",
+                    "value_out": {"if":[{"var":"value"},1,0]}
+                },
+                {
+                    "data": "Block level",
+                    "shortcut": "BL",
+                    "bitoffs": "29",
+                    "bitsize": "1",
+                    "value_out": {"if":[{"var":"value"},1,0]}
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Off",
+                    "bitoffs": "31",
+                    "bitsize": "1",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "send": true,
+            "condition": {
+                "command": [
+                    {
+                        "value": 1
+                    }
+                ]
+            },
+            "datafield": [
+                {
+                    "data": "fixed parameter",
+                    "description": "dummy",
+                    "bitoffs": "0",
+                    "bitsize": "8",
+                    "value": 2
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Dimming level",
+                    "bitoffs": "8",
+                    "bitsize": "8",
+                    "value": 100
+                },
+                {
+                    "data": "Dimming speed",
+                    "shortcut": "DS",
+                    "bitoffs": "16",
+                    "bitsize": "8",
+                    "value": {"var": "value"}
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Data telegramm",
+                    "bitoffs": "28",
+                    "bitsize": "1",
+                    "value": 1
+                },
+                {
+                    "data": "Learning mode",
+                    "shortcut": "LM",
+                    "bitoffs": "26",
+                    "bitsize": "1",
+                    "value_out": {"if":[{"var":"value"},1,0]}
+                },
+                {
+                    "data": "Block level",
+                    "shortcut": "BL",
+                    "bitoffs": "29",
+                    "bitsize": "1",
+                    "value_out": {"if":[{"var":"value"},1,0]}
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "On",
+                    "bitoffs": "31",
+                    "bitsize": "1",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "send": true,
+            "condition": {
+                "command": [
+                    {
+                        "value": 2
+                    }
+                ]
+            },
+            "datafield": [
+                {
+                    "data": "fixed parameter",
+                    "description": "dummy",
+                    "bitoffs": "0",
+                    "bitsize": "8",
+                    "value": 2
+                },
+                {
+                    "data": "Dimming level",
+                    "shortcut": "LVL",
+                    "bitoffs": "8",
+                    "bitsize": "8",
+                    "value": {"var": "value"}
+                },
+                {
+                    "data": "Dimming speed",
+                    "shortcut": "DS",
+                    "bitoffs": "16",
+                    "bitsize": "8",
+                    "value": {"var": "value"}
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Data telegramm",
+                    "bitoffs": "28",
+                    "bitsize": "1",
+                    "value": 1
+                },
+                {
+                    "data": "Learning mode",
+                    "shortcut": "LM",
+                    "bitoffs": "26",
+                    "bitsize": "1",
+                    "value_out": {"if":[{"var":"value"},1,0]}
+                },
+                {
+                    "data": "Block level",
+                    "shortcut": "BL",
+                    "bitoffs": "29",
+                    "bitsize": "1",
+                    "value_out": {"if":[{"var":"value"},1,0]}
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "On",
+                    "bitoffs": "31",
+                    "bitsize": "1",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "send": true,
+            "condition": {
+                "command": [
+                    {
+                        "value": 3
+                    }
+                ]
+            },
+            "datafield": [
+                {
+                    "data": "fixed parameter",
+                    "description": "Hex = E0",
+                    "bitoffs": "0",
+                    "bitsize": "8",
+                    "value": 224
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Hex = 40",
+                    "bitoffs": "8",
+                    "bitsize": "8",
+                    "value": 64
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Hex = 0D",
+                    "bitoffs": "16",
+                    "bitsize": "8",
+                    "value": 13
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Hex = 80",
+                    "bitoffs": "24",
+                    "bitsize": "8",
+                    "value": 128
+                }
+            ]
+        },
+        {
+            "send": true,
+            "condition": {
+                "command": [
+                    {
+                        "value": 4
+                    }
+                ]
+            },
+            "datafield": [
+                {
+                    "data": "fixed parameter",
+                    "description": "Hex = 00",
+                    "bitoffs": "0",
+                    "bitsize": "8",
+                    "value": 0
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Hex = 00",
+                    "bitoffs": "8",
+                    "bitsize": "8",
+                    "value": 0
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Hex = 00",
+                    "bitoffs": "16",
+                    "bitsize": "8",
+                    "value": 0
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Hex = 08",
+                    "bitoffs": "24",
+                    "bitsize": "8",
+                    "value": 8
+                }
+            ]
+        },
+        {
+            "send": true,
+            "condition": {
+                "command": [
+                    {
+                        "value": 5
+                    }
+                ]
+            },
+            "datafield": [
+                {
+                    "data": "fixed parameter",
+                    "description": "Hex = 00",
+                    "bitoffs": "0",
+                    "bitsize": "8",
+                    "value": 0
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Hex = 00",
+                    "bitoffs": "8",
+                    "bitsize": "8",
+                    "value": 0
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Hex = 00",
+                    "bitoffs": "16",
+                    "bitsize": "8",
+                    "value": 0
+                },
+                {
+                    "data": "fixed parameter",
+                    "description": "Hex = 28",
+                    "bitoffs": "24",
+                    "bitsize": "8",
+                    "value": 40
+                }
+            ]
+        },
+        {
+            "send": false,
+            "datafield": [
+                {
+                    "data": "Level",
+                    "shortcut": "LVL",
+                    "bitoffs": "8",
+                    "bitsize": "8",
+                    "value": {"var": "value"}
+                },
+                {
+                    "data": "Learning mode",
+                    "shortcut": "LM",
+                    "bitoffs": "26",
+                    "bitsize": "1",
+                    "value": {"==": [{"var": "value"},1]}
+                },
+                {
+                    "data": "Block level",
+                    "shortcut": "BL",
+                    "bitoffs": "29",
+                    "bitsize": "1",
+                    "value": {"==": [{"var": "value"},1]}
+                },
+                {
+                    "data": "On",
+                    "shortcut": "ON",
+                    "bitoffs": "31",
+                    "bitsize": "1",
+                    "value": {"==": [{"var": "value" },1]}
+                }
+            ]
+        }
+    ]
+}

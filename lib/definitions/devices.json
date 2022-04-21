@@ -482,7 +482,7 @@
     },
     "FD62NP-230V": {
       "EEP": [
-        "TF-13-26"
+        "TF-13-99"
       ],
       "autocreate": true,
       "teachin_method": "MSC",
@@ -500,7 +500,7 @@
     },
     "FD62NP-230V (manual)": {
       "EEP": [
-        "TF-13-26"
+        "TF-13-99"
       ],
       "autocreate": false,
       "teachin_method": "none",
@@ -522,7 +522,7 @@
     },
     "FD62NPN-230V": {
       "EEP": [
-        "TF-13-26"
+        "TF-13-99"
       ],
       "autocreate": true,
       "teachin_method": "MSC",
@@ -540,7 +540,7 @@
     },
     "FD62NPN-230V (manual)": {
       "EEP": [
-        "TF-13-26"
+        "TF-13-99"
       ],
       "autocreate": false,
       "teachin_method": "none",
