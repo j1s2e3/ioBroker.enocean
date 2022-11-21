@@ -5,7 +5,7 @@
   "func_number": "0x00",
   "type_number": "0x00",
   "type_title": "FTRx5HS, FTAFx5D",
-  "bidirectional": false,
+  "bidirectional": true,
   "objects": {
     "preDefined": [
       "SP",
@@ -40,7 +40,7 @@
         "role": "state",
         "type": "number",
         "read": true,
-        "write": true,
+        "write": false,
         "def": 0,
         "unit": "°K"
       },
@@ -74,103 +74,29 @@
       },
       "datafield": [
         {
-          "data": "Night reduction",
-          "shortcut": "NR",
+          "data": "fixed parameter",
+          "description": "Hex = 00",
           "bitoffs": "0",
           "bitsize": "8",
-          "value_out": {
-            "if": [
-              {
-                "==": [
-                  0,
-                  {
-                    "var": "value"
-                  }
-                ]
-              },
-              0,
-              {
-                "==": [
-                  1,
-                  {
-                    "var": "value"
-                  }
-                ]
-              },
-              6,
-              {
-                "==": [
-                  2,
-                  {
-                    "var": "value"
-                  }
-                ]
-              },
-              12,
-              {
-                "==": [
-                  3,
-                  {
-                    "var": "value"
-                  }
-                ]
-              },
-              19,
-              {
-                "==": [
-                  4,
-                  {
-                    "var": "value"
-                  }
-                ]
-              },
-              25,
-              {
-                "==": [
-                  5,
-                  {
-                    "var": "value"
-                  }
-                ]
-              },
-              31
-            ]
-          }
+          "value": 0
         },
         {
           "data": "Set point 12...28°C",
           "shortcut": "SP",
           "bitoffs": "8",
           "bitsize": "8",
-          "value_out": {
-            "+": [
-              {
-                "/": [
-                  {
-                    "-": [
-                      {
-                        "var": "value"
-                      },
-                      0
-                    ]
-                  },
-                  0.1568627450980392
-                ]
-              },
-              0
-            ]
-          }
+          "value_out": {"+":[{"/":[{"-":[{"var":"value"},0]},0.1568627450980392]},0]}
         },
         {
           "data": "fixed parameter",
-          "description": "dummy",
+          "description": "Hex = 00",
           "bitoffs": "16",
           "bitsize": "8",
           "value": 0
         },
         {
           "data": "fixed parameter",
-          "description": "Represents learnbit",
+          "description": "Must be set",
           "bitoffs": "28",
           "bitsize": "1",
           "value": 1
@@ -180,15 +106,7 @@
           "shortcut": "SPRI",
           "bitoffs": "30",
           "bitsize": "1",
-          "value_out": {
-            "if": [
-              {
-                "var": "value"
-              },
-              0,
-              1
-            ]
-          }
+          "value_out": {"if":[{"var":"value"},0,1]}
         }
       ]
     },
@@ -204,28 +122,28 @@
       "datafield": [
         {
           "data": "fixed parameter",
-          "description": "teachin byte 1",
+          "description": "Hex = 40",
           "bitoffs": "0",
           "bitsize": "8",
           "value": 64
         },
         {
           "data": "fixed parameter",
-          "description": "teachin byte 2",
+          "description": "Hex = 30",
           "bitoffs": "8",
           "bitsize": "8",
           "value": 48
         },
         {
           "data": "fixed parameter",
-          "description": "teachin byte 3",
+          "description": "Hex = 0D",
           "bitoffs": "16",
           "bitsize": "8",
           "value": 13
         },
         {
           "data": "fixed parameter",
-          "description": "teachin byte 4",
+          "description": "Hex = 85",
           "bitoffs": "24",
           "bitsize": "8",
           "value": 133
@@ -242,84 +160,12 @@
           "bitsize": "8",
           "value": {
             "if": [
-              {
-                "==": [
-                  0,
-                  {
-                    "var": "value"
-                  }
-                ]
-              },
-              0,
-              {
-                "==": [
-                  6,
-                  {
-                    "var": "value"
-                  }
-                ]
-              },
-              1,
-              {
-                "==": [
-                  12,
-                  {
-                    "var": "value"
-                  }
-                ]
-              },
-              2,
-              {
-                "==": [
-                  19,
-                  {
-                    "var": "value"
-                  }
-                ]
-              },
-              3,
-              {
-                "==": [
-                  25,
-                  {
-                    "var": "value"
-                  }
-                ]
-              },
-              4,
-              {
-                "==": [
-                  31,
-                  {
-                    "var": "value"
-                  }
-                ]
-              },
-              5
-            ]
-          }
-        },
-        {
-          "data": "Temperature",
-          "shortcut": "TMP",
-          "bitoffs": "16",
-          "bitsize": "8",
-          "value": {
-            "+": [
-              {
-                "*": [
-                  {
-                    "-": [
-                      {
-                        "var": "value"
-                      },
-                      255
-                    ]
-                  },
-                  -0.156862745
-                ]
-              },
-              0
+              {"==":[0, {"var": "value"}]}, 0,
+              {"==":[6, {"var": "value"}]}, 1,
+              {"==":[12, {"var": "value"}]}, 2,
+              {"==":[19, {"var": "value"}]}, 3,
+              {"==":[25, {"var": "value"}]}, 4,
+              {"==":[31, {"var": "value"}]}, 5
             ]
           }
         },
@@ -328,24 +174,14 @@
           "shortcut": "SP",
           "bitoffs": "8",
           "bitsize": "8",
-          "value": {
-            "+": [
-              {
-                "*": [
-                  {
-                    "-": [
-                      {
-                        "var": "value"
-                      },
-                      0
-                    ]
-                  },
-                  0.1568627450980392
-                ]
-              },
-              0
-            ]
-          }
+          "value": {"+":[{"*":[{"-":[{"var":"value"},0]},0.1568627450980392]},0]}
+        },
+        {
+          "data": "Temperature",
+          "shortcut": "TMP",
+          "bitoffs": "16",
+          "bitsize": "8",
+          "value": {"+": [ { "*": [ { "-": [{"var": "value"}, 255] }, -0.156862745 ]}, 0]}
         }
       ]
     }
