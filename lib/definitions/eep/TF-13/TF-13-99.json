@@ -19,7 +19,7 @@
                 "type": "number",
                 "read": true,
                 "write": true,
-                "states": {"0": "Off", "1": "On", "2": "Set level", "3": "Teach-in", "4": "Request confirmation telegram", "5": "Activate Learnmode"},
+                "states": {"0": "Off", "1": "On", "2": "Set level", "3": "Teach-in", "4": "Request confirmation telegram", "5": "Activate learnmode"},
                 "def": 0
             },
             "native": {}
