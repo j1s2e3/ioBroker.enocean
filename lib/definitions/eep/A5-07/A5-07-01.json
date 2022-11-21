@@ -7,7 +7,7 @@
   "type_title": "Occupancy with Supply voltage monitor",
   "bidirectional": false,
   "objects": {
-    "preDefined": ["PIRS", "SVC"]
+    "preDefined": ["PIRS", "SVC", "SVA"]
   },
   "case": [{
     "send": false,
@@ -20,12 +20,19 @@
         "value": {"<=":[128,{"var":"value"},255]}
       },
       {
-        "data": "Supply Voltage 0...5.0V (Optional)",
+        "data": "Supply Voltage 0...5.0V (valid if SVA is true)",
         "shortcut": "SVC",
         "bitoffs": "0",
         "bitsize": "8",
         "value": {"+": [{"*":[{"-":[{"var":  "value"}, 0]},0.02]}, 0]},
         "decimals": 2
+      },
+      {
+        "data": "Supply Voltage available",
+        "shortcut": "SVA",
+        "bitoffs": "31",
+        "bitsize": "1",
+        "value": {"==": [{"var":  "value"}, 1]}
       }
     ]
   }]
