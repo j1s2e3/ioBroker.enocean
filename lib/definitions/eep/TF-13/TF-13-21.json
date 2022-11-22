@@ -23,7 +23,7 @@
           "1": "Green",
           "2": "Blue",
           "3": "White",
-          "4": "Dimup",
+          "4": "Dim up",
           "5": "Dim down",
           "6": "Dim stop",
           "7": "Teach-in",
@@ -39,6 +39,20 @@
         "name": {
           "en": "Red",
           "de": "Rot"
+        },
+        "role": "state",
+        "type": "number",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    "ROUT": {
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Red out",
+          "de": "Rot schreibend"
         },
         "role": "state",
         "type": "number",
@@ -60,6 +74,20 @@
         "role": "state",
         "type": "number",
         "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    "GOUT": {
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Green out",
+          "de": "Grün schreibend"
+        },
+        "role": "state",
+        "type": "number",
+        "read": true,
         "write": true,
         "min": 0,
         "max": 1023,
@@ -77,6 +105,20 @@
         "role": "state",
         "type": "number",
         "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    "BOUT": {
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Blue out",
+          "de": "Blau schreibend"
+        },
+        "role": "state",
+        "type": "number",
+        "read": true,
         "write": true,
         "min": 0,
         "max": 1023,
@@ -90,6 +132,20 @@
         "name": {
           "en": "White",
           "de": "Weiß"
+        },
+        "role": "state",
+        "type": "number",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    "WOUT": {
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "White out",
+          "de": "Weiß schreibend"
         },
         "role": "state",
         "type": "number",
@@ -112,6 +168,12 @@
         "type": "number",
         "read": true,
         "write": true,
+        "states": {
+          "0": "Use hardware setting",
+          "1": "Fast",
+          "128": "Medium",
+          "255": "Slow"
+        },
         "def": 0
       },
       "native": {}
@@ -189,8 +251,8 @@
       },
       "datafield": [
         {
-          "data": "Red",
-          "shortcut": "R",
+          "data": "Red out",
+          "shortcut": "ROUT",
           "bitoffs": "0",
           "bitsize": "16",
           "value_out": {
@@ -224,8 +286,8 @@
       },
       "datafield": [
         {
-          "data": "Green",
-          "shortcut": "G",
+          "data": "Green out",
+          "shortcut": "GOUT",
           "bitoffs": "0",
           "bitsize": "16",
           "value_out": {
@@ -259,8 +321,8 @@
       },
       "datafield": [
         {
-          "data": "Blue",
-          "shortcut": "B",
+          "data": "Blue out",
+          "shortcut": "BOUT",
           "bitoffs": "0",
           "bitsize": "16",
           "value_out": {
@@ -294,8 +356,8 @@
       },
       "datafield": [
         {
-          "data": "White",
-          "shortcut": "W",
+          "data": "White out",
+          "shortcut": "WOUT",
           "bitoffs": "0",
           "bitsize": "16",
           "value_out": {
@@ -304,7 +366,7 @@
         },
         {
           "data": "fixed parameter",
-          "description": "Set red dim value",
+          "description": "Set white dim value",
           "bitoffs": "16",
           "bitsize": "8",
           "value": 19
@@ -343,13 +405,7 @@
           "bitoffs": "15",
           "bitsize": "1",
           "value_out": {
-            "if": [
-              {
-                "var": "value"
-              },
-              1,
-              0
-            ]
+            "if": [{"var": "value"}, 1, 0]
           }
         },
         {
@@ -358,13 +414,7 @@
           "bitoffs": "14",
           "bitsize": "1",
           "value_out": {
-            "if": [
-              {
-                "var": "value"
-              },
-              1,
-              0
-            ]
+            "if": [{"var": "value"}, 1, 0]
           }
         },
         {
@@ -373,13 +423,7 @@
           "bitoffs": "13",
           "bitsize": "1",
           "value_out": {
-            "if": [
-              {
-                "var": "value"
-              },
-              1,
-              0
-            ]
+            "if": [{"var": "value"}, 1, 0]
           }
         },
         {
@@ -388,13 +432,7 @@
           "bitoffs": "12",
           "bitsize": "1",
           "value_out": {
-            "if": [
-              {
-                "var": "value"
-              },
-              1,
-              0
-            ]
+            "if": [{"var": "value"}, 1, 0]
           }
         },
         {
@@ -445,13 +483,7 @@
           "bitoffs": "15",
           "bitsize": "1",
           "value_out": {
-            "if": [
-              {
-                "var": "value"
-              },
-              1,
-              0
-            ]
+            "if": [{"var": "value"}, 1, 0]
           }
         },
         {
@@ -460,13 +492,7 @@
           "bitoffs": "14",
           "bitsize": "1",
           "value_out": {
-            "if": [
-              {
-                "var": "value"
-              },
-              1,
-              0
-            ]
+            "if": [{"var": "value"}, 1, 0]
           }
         },
         {
@@ -475,13 +501,7 @@
           "bitoffs": "13",
           "bitsize": "1",
           "value_out": {
-            "if": [
-              {
-                "var": "value"
-              },
-              1,
-              0
-            ]
+            "if": [{"var": "value"}, 1, 0]
           }
         },
         {
@@ -490,13 +510,7 @@
           "bitoffs": "12",
           "bitsize": "1",
           "value_out": {
-            "if": [
-              {
-                "var": "value"
-              },
-              1,
-              0
-            ]
+            "if": [{"var": "value"}, 1, 0]
           }
         },
         {
@@ -547,13 +561,7 @@
           "bitoffs": "15",
           "bitsize": "1",
           "value_out": {
-            "if": [
-              {
-                "var": "value"
-              },
-              1,
-              0
-            ]
+            "if": [{"var": "value"}, 1, 0]
           }
         },
         {
@@ -562,13 +570,7 @@
           "bitoffs": "14",
           "bitsize": "1",
           "value_out": {
-            "if": [
-              {
-                "var": "value"
-              },
-              1,
-              0
-            ]
+            "if": [{"var": "value"}, 1, 0]
           }
         },
         {
@@ -577,13 +579,7 @@
           "bitoffs": "13",
           "bitsize": "1",
           "value_out": {
-            "if": [
-              {
-                "var": "value"
-              },
-              1,
-              0
-            ]
+            "if": [{"var": "value"}, 1, 0]
           }
         },
         {
@@ -592,13 +588,7 @@
           "bitoffs": "12",
           "bitsize": "1",
           "value_out": {
-            "if": [
-              {
-                "var": "value"
-              },
-              1,
-              0
-            ]
+            "if": [{"var": "value"}, 1, 0]
           }
         },
         {
@@ -636,28 +626,28 @@
       "datafield": [
         {
           "data": "fixed parameter",
-          "description": "Teachin DB3",
+          "description": "Hex = FF",
           "bitoffs": "0",
           "bitsize": "8",
           "value": 255
         },
         {
           "data": "fixed parameter",
-          "description": "Teachin DB2",
+          "description": "Hex = F8",
           "bitoffs": "8",
           "bitsize": "8",
           "value": 248
         },
         {
           "data": "fixed parameter",
-          "description": "Teachin DB1",
+          "description": "Hex = 0D",
           "bitoffs": "16",
           "bitsize": "8",
           "value": 13
         },
         {
           "data": "fixed parameter",
-          "description": "Teachin DB0",
+          "description": "Hex = 87",
           "bitoffs": "24",
           "bitsize": "8",
           "value": 135
@@ -676,28 +666,28 @@
       "datafield": [
         {
           "data": "fixed parameter",
-          "description": "dummy",
+          "description": "Hex = 0F",
           "bitoffs": "0",
           "bitsize": "8",
           "value": 15
         },
         {
           "data": "fixed parameter",
-          "description": "dummy",
+          "description": "Hex = 02",
           "bitoffs": "8",
           "bitsize": "8",
           "value": 2
         },
         {
           "data": "fixed parameter",
-          "description": "dummy",
+          "description": "Hex = 00",
           "bitoffs": "16",
           "bitsize": "8",
           "value": 0
         },
         {
           "data": "fixed parameter",
-          "description": "dummy",
+          "description": "Hex = 00",
           "bitoffs": "24",
           "bitsize": "8",
           "value": 0
