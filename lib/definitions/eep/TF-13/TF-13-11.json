@@ -16,7 +16,7 @@
         },
         "role": "state",
         "type": "number",
-        "read": true,
+        "read": false,
         "write": true,
         "states": {
           "0": "Off",
@@ -93,18 +93,18 @@
           "value": 0
         },
         {
-          "data": "fixed parameter",
-          "description": "Data telegramm",
-          "bitoffs": "28",
-          "bitsize": "1",
-          "value": 1
-        },
-        {
           "data": "Learning mode",
           "shortcut": "LM",
           "bitoffs": "26",
           "bitsize": "1",
           "value_out": {"if":[{"var":"value"},1,0]}
+        },
+        {
+          "data": "fixed parameter",
+          "description": "Data telegramm",
+          "bitoffs": "28",
+          "bitsize": "1",
+          "value": 1
         },
         {
           "data": "State blocked",
@@ -154,18 +154,18 @@
           "value": 0
         },
         {
-          "data": "fixed parameter",
-          "description": "Data telegramm",
-          "bitoffs": "28",
-          "bitsize": "1",
-          "value": 1
-        },
-        {
           "data": "Learning mode",
           "shortcut": "LM",
           "bitoffs": "26",
           "bitsize": "1",
           "value_out": {"if":[{"var":"value"},1,0]}
+        },
+        {
+          "data": "fixed parameter",
+          "description": "Data telegramm",
+          "bitoffs": "28",
+          "bitsize": "1",
+          "value": 1
         },
         {
           "data": "State blocked",

@@ -17,9 +17,16 @@
                 },
                 "role": "state",
                 "type": "number",
-                "read": true,
+                "read": false,
                 "write": true,
-                "states": {"0": "Off", "1": "On", "2": "Set level", "3": "Teach-in", "4": "Request confirmation telegram", "5": "Activate learnmode"},
+                "states": {
+                    "0": "Off",
+                    "1": "On",
+                    "2": "Set level",
+                    "3": "Teach-in",
+                    "4": "Request confirmation telegram",
+                    "5": "Activate learnmode"
+                },
                 "def": 0
             },
             "native": {}
@@ -52,7 +59,12 @@
                 "type": "number",
                 "read": true,
                 "write": true,
-                "states": {"0": "Use hardware setting", "1": "Fast", "128": "Medium", "255": "Slow"},
+                "states": {
+                    "0": "Use hardware setting",
+                    "1": "Fast",
+                    "128": "Medium",
+                    "255": "Slow"
+                },
                 "def": 0
             },
             "native": {}
