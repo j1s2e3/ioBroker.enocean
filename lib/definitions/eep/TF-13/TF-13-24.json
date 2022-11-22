@@ -19,8 +19,8 @@
         "read": false,
         "write": true,
         "states": {
-          "0": "OFF",
-          "1": "ON"
+          "0": "Off",
+          "1": "On"
         },
         "def": 0
       },
@@ -40,7 +40,7 @@
       "datafield": [
         {
           "data": "fixed parameter",
-          "description": "OFF",
+          "description": "Hex = 50",
           "bitoffs": "0",
           "bitsize": "8",
           "value": 80
@@ -59,7 +59,7 @@
       "datafield": [
         {
           "data": "fixed parameter",
-          "description": "ON",
+          "description": "Hex = 70",
           "bitoffs": "0",
           "bitsize": "8",
           "value": 112
