@@ -19,10 +19,10 @@
         "read": false,
         "write": true,
         "states": {
-          "0": "CH1 On",
-          "1": "CH1 Off",
-          "2": "CH2 On",
-          "3": "CH2 Off"
+          "0": "Channel 1 On",
+          "1": "Channel 1 Off",
+          "2": "Channel 2 On",
+          "3": "Channel 2 Off"
         },
         "def": 0
       },
@@ -42,7 +42,7 @@
       "datafield": [
         {
           "data": "fixed parameter",
-          "description": "CH 1 On",
+          "description": "Hex = 10",
           "bitoffs": "0",
           "bitsize": "8",
           "value": 16
@@ -61,7 +61,7 @@
       "datafield": [
         {
           "data": "fixed parameter",
-          "description": "CH 1 Off",
+          "description": "Hex = 30",
           "bitoffs": "0",
           "bitsize": "8",
           "value": 48
@@ -80,7 +80,7 @@
       "datafield": [
         {
           "data": "fixed parameter",
-          "description": "CH 2 On",
+          "description": "Hex = 50",
           "bitoffs": "0",
           "bitsize": "8",
           "value": 80
@@ -99,7 +99,7 @@
       "datafield": [
         {
           "data": "fixed parameter",
-          "description": "CH 2 Off",
+          "description": "Hex = 70",
           "bitoffs": "0",
           "bitsize": "8",
           "value": 112
