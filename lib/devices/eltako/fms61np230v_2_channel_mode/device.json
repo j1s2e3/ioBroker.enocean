@@ -29,15 +29,15 @@
             "1": "Enter device ID.",
             "2": "Click on 'Add Device'.",
             "3": "Set the lower rotary switch to RT1 and the upper one to LRN.",
-            "4": "Switch to the objects and send the command (CMD) 'CH 1 ON'.",
-            "5": "Repeat step 3 with RT2 and 4 with CH 2"
+            "4": "Switch to the objects and send the command (CMD) 'Channel 1 On'.",
+            "5": "Repeat step 3 with RT2 and step 4 with Channel 2."
         },
         "de": {
             "1": "Geräte ID eintragen.",
             "2": "Auf 'Gerät Hinzufügen' klicken.",
             "3": "Den unteren Drehschalter auf RT1 und den oberen auf LRN stellen.",
-            "4": "Zu den Objekten Wechseln und den Befehl (CMD) 'CH 1 ON' senden.",
-            "5": "Schritt 3 mit RT2 und 4 mit CH2 Wiederholen"
+            "4": "Zu den Objekten Wechseln und den Befehl (CMD) 'Channel 1 ON' senden.",
+            "5": "Schritt 3 mit RT2 und Schritt 4 mit Channel 2 wiederholen."
         }
     },
     "name": "FMS61NP-230V (2 channel mode)"

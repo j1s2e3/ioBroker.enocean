@@ -16,8 +16,8 @@
         "de": {
             "1": "Geräte ID eintragen. Jeder Kanal hat seine eigene ID, der ID Bereich ist auf dem Gerät aufgedruckt. Die ID für alle Kanäle ist die erste ID plus 4. 1 = Rot, 2 = Grün, 3 = Blau, 4 = Weiß, 5 = Alle.",
             "2": "Auf 'Gerät Hinzufügen' klicken.",
-            "3": "Anlernmodus am FRGBW71L starten für den Kanal der eingelernt werden soll, am oberen Drehschalter 9 oder 10 auswählen. Für weitere informationen bitte die Anleitung des FRGBW71L lesen.",
-            "4": "Zu den Objekten Wechseln und den Befehl (CMD) 'Teach-in' senden."
+            "3": "Am FRGBW71L den Anlernmodus für den Kanal starten, der eingelernt werden soll. Am oberen Drehschalter 9 oder 10 auswählen. Für weitere Informationen bitte die Anleitung des FRGBW71L lesen.",
+            "4": "Zu den Objekten wechseln und den Befehl (CMD) 'Teach-in' senden."
         }
     },
     "name": "FRGBW71L (Single or all channel)"

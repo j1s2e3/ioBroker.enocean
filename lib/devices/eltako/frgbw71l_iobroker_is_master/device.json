@@ -24,8 +24,8 @@
             "4": "Bei allen FRGBW71L erst den Speicherinhalt komplett leeren und dann die Gerätekonfiguration löschen.",
             "5": "Alle FRGBW71L ausschalten (keine Spannungsversorgung). <br>Oberen Drehschalter an allen FRGBW71L auf 1 drehen. <br>Mittleren Drehschalter an allen FRGBW71L auf min drehen. <br>Unteren Drehschalter an allen FRGBW71L auf max drehen.",
             "6": "Alle FRGBW71L einschalten.",
-            "7": "Zu den Objekten Wechseln und den Befehl (CMD) 'Teach-in' senden.",
-            "8": "Alle FRGBW71L auf die selbe Mindesthelligkeit und Dimmspeed einstellen. Für mehr informationen bitte die Anleitung des FRGBW71L, Abschnitt Master-Slave Betrieb lesen."
+            "7": "Zu den Objekten wechseln und den Befehl (CMD) 'Teach-in' senden.",
+            "8": "Alle FRGBW71L auf die selbe Mindesthelligkeit und Dimmspeed einstellen. Für mehr Informationen bitte die Anleitung des FRGBW71L, Abschnitt Master-Slave Betrieb lesen."
         }
     },
     "name": "FRGBW71L (ioBroker is Master)"

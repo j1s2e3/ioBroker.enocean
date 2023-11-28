@@ -11,7 +11,7 @@
         "2": "#addDevicePredefined",
         "3": {
             "en": "Start teach-in mode on FL62-230V. For more information, please read the FL62-230V manual.",
-            "de": "Anlernmodus am FL62-230V starten. Für weitere informationen bitte die Anleitung des FL62-230V lesen."
+            "de": "Anlernmodus am FL62-230V starten. Für weitere Informationen bitte die Anleitung des FL62-230V lesen."
         },
         "4": "#setState {CMD: 2}",
         "5": {
@@ -24,13 +24,13 @@
             "1": "Enter device ID.",
             "2": "Click on 'Add Device'.",
             "3": "Start teach-in mode on FL62-230V. For more information, please read the FL62-230V manual.",
-            "4": "Switch to the objects and send the command (CMD) 'Teach-in', number 2."
+            "4": "Switch to the objects and send the command (CMD) 'Teach-in'."
         },
         "de": {
             "1": "Geräte ID eintragen.",
             "2": "Auf 'Gerät Hinzufügen' klicken.",
-            "3": "Anlernmodus (Lernmodus entsperren) am FL62-230V starten. Im Auslieferungszustand ist der Anlernmodus die ersten 2 Minuten aktiv, nachdem er am Strom angeschlossen wurde. Für weitere informationen bitte die Anleitung des FL62-230V lesen.",
-            "4": "Zu den Objekten Wechseln und den Befehl (CMD) 'Teach-in', nummer 2, senden."
+            "3": "Anlernmodus (Lernmodus entsperren) am FL62-230V starten. Im Auslieferungszustand ist der Anlernmodus die ersten 2 Minuten aktiv, nachdem er am Strom angeschlossen wurde. Für weitere Informationen bitte die Anleitung des FL62-230V lesen.",
+            "4": "Zu den Objekten wechseln und den Befehl (CMD) 'Teach-in' senden."
         }
     },
     "name": "FL62-230V"

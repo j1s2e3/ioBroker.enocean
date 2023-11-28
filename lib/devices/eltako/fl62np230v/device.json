@@ -9,11 +9,11 @@
     "help": {
         "en": {
             "1": "Click on 'Add Device'.",
-            "2": "Start teachin mode on your FL62NP-230V. For more information please read the manual of FL62NP-230V"
+            "2": "Start teachin mode on your FL62NP-230V. For more information please read the manual of FL62NP-230V."
         },
         "de": {
             "1": "Auf 'Gerät Hinzufügen' klicken.",
-            "2": "Anlernmodus am FL62NP-230V starten. Im Auslieferungszustand ist der Anlernmodus die ersten 2 Minuten aktiv, nachdem er am Strom angeschlossen wurde. Für weitere informationen bitte die Anleitung des FL62NP-230V lesen."
+            "2": "Anlernmodus am FL62NP-230V starten. Im Auslieferungszustand ist der Anlernmodus die ersten 2 Minuten aktiv, nachdem er am Strom angeschlossen wurde. Für weitere Informationen bitte die Anleitung des FL62NP-230V lesen."
         }
     },
     "name": "FL62NP-230V"
