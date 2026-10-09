@@ -85,7 +85,7 @@
           "shortcut": "SP",
           "bitoffs": "8",
           "bitsize": "8",
-          "value_out": {"+":[{"/":[{"-":[{"var":"value"},0]},0.1568627450980392]},0]}
+          "value_out": {"max":[0,{"min":[255,{"+":[{"/":[{"-":[{"var":"value"},0]},0.1568627450980392]},0.5]}]}]}
         },
         {
           "data": "fixed parameter",
