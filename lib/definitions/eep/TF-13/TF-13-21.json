@@ -666,31 +666,31 @@
       "datafield": [
         {
           "data": "fixed parameter",
-          "description": "Hex = 0F",
+          "description": "Hex = 00",
           "bitoffs": "0",
           "bitsize": "8",
-          "value": 15
+          "value": 0
         },
         {
           "data": "fixed parameter",
-          "description": "Hex = 02",
+          "description": "Hex = 00",
           "bitoffs": "8",
+          "bitsize": "8",
+          "value": 0
+        },
+        {
+          "data": "fixed parameter",
+          "description": "Request confirmation telegram (Hex = 00)",
+          "bitoffs": "16",
           "bitsize": "8",
           "value": 2
         },
         {
           "data": "fixed parameter",
-          "description": "Hex = 00",
-          "bitoffs": "16",
-          "bitsize": "8",
-          "value": 0
-        },
-        {
-          "data": "fixed parameter",
-          "description": "Hex = 00",
+          "description": "GFVS (Hex = 0F)",
           "bitoffs": "24",
           "bitsize": "8",
-          "value": 0
+          "value": 15
         }
       ]
     },
